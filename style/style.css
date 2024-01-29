@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+.game-arena{
+    position: relative;
+    background: yellowgreen;
+    overflow: hidden;
+    height: 100vh;
+}
+.target-pot{
+    position: absolute;
+    background: url("../img/uriyadiPot.png") no-repeat;
+}
+.player-bull{
+position: absolute;
+background: url("../img/bullPlayer.png") no-repeat;
+}
