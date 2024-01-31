@@ -1,19 +1,100 @@
 body{
     margin:0;
     padding:0;
+    background: yellowgreen;
 }
 
 .game-arena{
     position: relative;
-    background: yellowgreen;
     overflow: hidden;
-    height: 100vh;
+    height: 90vh;
 }
 .target-pot{
     position: absolute;
     background: url("../img/uriyadiPot.png") no-repeat;
+    animation-name: "targetAnimation";
+    animation-duration: 2s;
 }
 .player-bull{
 position: absolute;
 background: url("../img/bullPlayer.png") no-repeat;
+}
+.obstacle{
+    position: absolute;
+    background: yellow;
+}
+.timer{
+    position: absolute;
+    bottom: 0vh;
+    left: 25vw;
+}
+
+.score{
+    position: absolute;
+    bottom: 0vh;
+    left: 50vw; 
+}
+
+.instruction{
+position: relative;
+height: 100vh;
+display: flex;
+/* flex-direction: column-reverse; */
+}
+.ins-box{
+    position: absolute;
+    display: flex;
+    top: 15vh;
+    left: 20vw;
+    background: #693320;
+    color: #e09347;
+    height: 48vh;
+    width: 40vw;
+    box-shadow: 0px 2px 10px 10px #705146;
+    padding: 5vh 5vw;
+    flex-direction: column;
+  font-size: 18px;
+  font-family: monospace;
+
+}
+.ins-box h2{
+    text-align: center;
+    list-style: none;
+    margin: 5px 0px;
+}
+.ins-box ul{
+    text-align: center;
+    list-style: none;
+}
+.ins-box li{
+    padding: 5px 0px 0px 0px;
+}
+.playBtnDiv{
+    margin:1vh 16vw;
+    
+}
+.playBtn{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* @keyframes targetAnimation {
+    from {display: none;}
+    to {display: block;}
+  } */
+.playBtn a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100vw;
+    height: 100vh;
 }
