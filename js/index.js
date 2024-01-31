@@ -92,7 +92,7 @@ setInterval(() => {
             bull.positionY + bull.height > obstacle.positionY) {
             //    console.log(bull.positionX,(obstacle.positionX + obstacle.width),(bull.positionX+ bull.width),obstacle.positionX)
             //    console.log(bull.positionX, obstacle.width, bull.width,obstacle.positionX)
-            location.href = "./index.html"
+            location.href = "./game.html"
         }
     })
 
