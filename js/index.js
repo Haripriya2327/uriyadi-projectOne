@@ -1,11 +1,20 @@
 // create class instances
 const bull = new Bull();
 const potArmy = [];
-const potPositionArr = [0, 20, 60, 80, 90, 40];
-let pot;
+const potPositionXArr = [10, 30, 50,  70];
+
+//generate obstacles
+const obstArmy = [];
+setInterval(() => {
+    const obstacle = new Obstacle();
+    obstArmy.push(obstacle);// adding obstacles
+}, 2000)
+
+// let pot;
 // create pots with specific position
-potPositionArr.forEach((position) => {
-    const pot = new Pot(position);
+potPositionXArr.forEach((positionX) => {
+    const positionY = Math.floor((Math.random()* (60)) + 40);// pots start from different heights
+    const pot = new Pot(positionX,positionY);
     potArmy.push(pot);
 })
 
@@ -13,7 +22,7 @@ potPositionArr.forEach((position) => {
 
 setInterval(() => {
     potArmy[0].moveUpDown();
-}, 45)
+}, 55)
 setInterval(() => {
     potArmy[2].moveUpDown();
 }, 50)
@@ -21,14 +30,9 @@ setInterval(() => {
     potArmy[1].moveUpDown();
 }, 60)
 setInterval(() => {
-    potArmy[4].moveUpDown();
-}, 55)
-setInterval(() => {
     potArmy[3].moveUpDown();
 }, 70)
-setInterval(() => {
-    potArmy[5].moveUpDown();
-}, 75)
+
 
 
 //move player left and right
@@ -42,12 +46,17 @@ document.addEventListener('keydown', (e) => {
     }
 })
 // player jump
-document.addEventListener('keyup', (e) => {
-    if (e.code === 'Space') {
-        bull.jumpUpDown();
-        // console.log("bull positionX -"+bull.positionX + " bull positionY -" + bull.positionY)
-    }
-})
+
+    document.addEventListener('keyup', (e) => {
+        if (e.code === 'Space') {
+            bull.jumpUpDown();
+            // console.log("bull positionX -"+bull.positionX + " bull positionY -" + bull.positionY)
+        }     
+    })
+
+    
+
+
 
 //detecting target hits
 setInterval(() => {
@@ -56,31 +65,30 @@ setInterval(() => {
             bull.positionX + bull.width > pot.positionX &&
             bull.positionY < pot.positionY + pot.height &&
             bull.positionY + bull.height > pot.positionY) {
-            pot.potElm.style.display = "none";          
-
+            pot.potElm.style.background = "url('../img/potBroken.png') no-repeat" ; 
+            game.createsugarcanes(pot.positionX, pot.positionY);
+            game.updateScore();           
             setTimeout(() => {
-                pot.potElm.style.display = "block"
-                // game.updateScore();
+                pot.potElm.style.background = "url('../img/potFinal.png') no-repeat" ; 
             }, 4000)
+            setInterval(() =>{
+                game.dropsugarcanes();
+            },100)
 
         }
     })
 
-}, 30)
+}, 100)
 
-//generate obstacles
-const obstArmy = [];
-setInterval(() => {
-    const obstacle = new Obstacle();
-    obstArmy.push(obstacle);// adding obstacles
-}, 3000)
 
 // obstacle movements
 setInterval(() => {
     obstArmy.forEach((obstacle) => {
         obstacle.moveDown();
     })
-}, 50)
+}, 100)
+
+
 
 //obstacle collision detection
 setInterval(() => {
@@ -92,18 +100,18 @@ setInterval(() => {
             bull.positionY + bull.height > obstacle.positionY) {
             //    console.log(bull.positionX,(obstacle.positionX + obstacle.width),(bull.positionX+ bull.width),obstacle.positionX)
             //    console.log(bull.positionX, obstacle.width, bull.width,obstacle.positionX)
-            location.href = "./game.html"
+            location.href = " playAgain.html" 
         }
+        
     })
 
 }, 30)
 
 
 //set timer
-
-// const gameTimer = setInterval(() => {
-//     game.updateTimer();
-//     if (game.timer === 30) {
-//         location.href = "start.html"
-//     }
-// }, 1000)
+const gameTimer = setInterval(() => {
+    game.updateTimer();
+    if (game.timer === 30) {
+        location.href = "playAgain.html"
+    }
+}, 1000)

@@ -3,7 +3,7 @@
 class Bull {
     constructor() {
         // create player details
-        this.positionX = 0;
+        this.positionX = 45;
         this.positionY = 5;
         this.width = 10.5;
         this.height = 11;
@@ -40,13 +40,13 @@ class Bull {
     }
     jumpUpDown() {
         // const gameDet = document.querySelector(".game-arena"); Refactoring positionY value needed
-        this.positionY = this.positionY + 30;
+        this.positionY = this.positionY + 25;
         this.bullElm.style.bottom = this.positionY + "vh";
         const jumpTimer = setInterval(() => {
-            this.positionY = this.positionY - 30;
+            this.positionY = this.positionY - 25;
             this.bullElm.style.bottom = this.positionY + "vh";
             clearInterval(jumpTimer);
-        }, 150)
+        }, 100)
 
         // console.log(this.positionY);
         // console.log(gameDet.offsetHeight);

@@ -1,9 +1,9 @@
 // class Pot(Target)
 class Pot {
-    constructor(positionX) {
-        this.positionY = 40;
+    constructor(positionX,positionY) {
+        this.positionY = positionY;
         this.width = 12;
-        this.height = 55;
+        this.height = 70;
         this.moveUp = true;
         this.positionX = positionX;
         this.potElm=null;
@@ -33,7 +33,7 @@ class Pot {
         }
         else {
             this.positionY = this.positionY - 1;
-            if (this.positionY === 40) {
+            if (this.positionY === 30) {
                 this.moveUp = true;
             }
         }

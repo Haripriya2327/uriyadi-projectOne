@@ -11,27 +11,40 @@ body{
 }
 .target-pot{
     position: absolute;
-    background: url("../img/uriyadiPot.png") no-repeat;
+    background: url("../img/potFinal.png") no-repeat;
     animation-name: "targetAnimation";
     animation-duration: 2s;
 }
 .player-bull{
 position: absolute;
-background: url("../img/bullPlayer.png") no-repeat;
+background: url("../img/cowangry.png") no-repeat;
 }
 .obstacle{
     position: absolute;
     background: yellow;
 }
-.timer{
+.sugarcane{
     position: absolute;
-    bottom: 0vh;
+    background: url("../img/sugarcane.png") no-repeat; 
+}
+.status-bar{
+    position: relative;
+    overflow: hidden;
+    height: 10vh;
+    background-color: #693320;
+}
+.status-box{
+    position: absolute;
+    bottom: 4vh;
+    font-family: monospace;
+    color: aliceblue;
+    font-size: 20px;
+}
+.timer{
     left: 25vw;
 }
 
 .score{
-    position: absolute;
-    bottom: 0vh;
     left: 50vw; 
 }
 
@@ -48,7 +61,7 @@ display: flex;
     left: 20vw;
     background: #693320;
     color: #e09347;
-    height: 48vh;
+    height: 55vh;
     width: 40vw;
     box-shadow: 0px 2px 10px 10px #705146;
     padding: 5vh 5vw;
@@ -57,7 +70,14 @@ display: flex;
   font-family: monospace;
 
 }
-.ins-box h2{
+.playAgain{   
+    height: 20vh;
+    width: 40vw;
+}
+.playAgain .playBtnDiv{
+    margin: 1vh 12vw;
+}
+.ins-box h2,h1{
     text-align: center;
     list-style: none;
     margin: 5px 0px;
@@ -86,7 +106,11 @@ display: flex;
     cursor: pointer;
     border-radius: 2px;
 }
-
+.result{
+    text-align: center;
+    margin-top: 4vh ;
+    margin-bottom: 4vh ;
+}
 /* @keyframes targetAnimation {
     from {display: none;}
     to {display: block;}
@@ -97,4 +121,21 @@ display: flex;
     text-decoration: none;
     width: 100vw;
     height: 100vh;
+}
+
+.hungerBar {
+   
+    height: 4vh;
+    background-color: #04AA6D;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: black;
+    /* border-right: #ddd; */
+  }
+.score-div{
+    width: 20vw;
+  background-color: #ddd;
+  left: 50vw; 
+  height: 4vh;
+  text-align: center;
 }
