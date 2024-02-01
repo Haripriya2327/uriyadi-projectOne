@@ -7,7 +7,7 @@ class Obstacle{
         this.height = 5;
         this.positionX = Math.floor(Math.random()* (100 - this.width + 1));
         this.potElm=null;
-        this.gameElm = document.getElementById("gameArena");
+        // this.gameElm = document.getElementById("gameArena");
         this.createObstacle();
     }
     createObstacle() {
@@ -20,7 +20,7 @@ class Obstacle{
         this.obstElm.style.left = this.positionX + "vw";
         this.obstElm.style.bottom = this.positionY + "vh";
           
-        this.gameElm.appendChild(this.obstElm);
+        game.gameArenaElm.appendChild(this.obstElm);
     }
 
     moveDown(){

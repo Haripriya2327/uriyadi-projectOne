@@ -7,7 +7,7 @@ class Bull {
         this.positionY = 5;
         this.width = 10.5;
         this.height = 11;
-        this.gameElm = document.getElementById("gameArena");
+        // this.gameElm = document.getElementById("gameArena");
         this.createBull();
 
     }
@@ -24,7 +24,7 @@ class Bull {
         this.bullElm.style.bottom = this.positionY + "vh";
         // this.potElm.style.bottom= 50+ "vh";
 
-        this.gameElm.appendChild(this.bullElm);
+        game.gameArenaElm.appendChild(this.bullElm);
     }
     playRight() {
         if ((this.positionX + 3) < 100) {

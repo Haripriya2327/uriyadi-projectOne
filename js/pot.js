@@ -7,7 +7,7 @@ class Pot {
         this.moveUp = true;
         this.positionX = positionX;
         this.potElm=null;
-        this.gameElm = document.getElementById("gameArena");
+        // this.gameElm = document.getElementById("gameArena");
         this.createTargetPot();
     }
     createTargetPot() {
@@ -20,7 +20,7 @@ class Pot {
         this.potElm.style.left = this.positionX + "vw";
         this.potElm.style.bottom = this.positionY + "vh";
           
-        this.gameElm.appendChild(this.potElm);
+        game.gameArenaElm.appendChild(this.potElm);
     }
 
     moveUpDown() {

@@ -1,7 +1,9 @@
 // create class instances
 const bull = new Bull();
-const potArmy = [];
+const potArmy = []; 
 const potPositionXArr = [10, 30, 50,  70];
+let playerJump = true;
+const resultElm = document.getElementById("cow")
 
 //generate obstacles
 const obstArmy = [];
@@ -49,9 +51,15 @@ document.addEventListener('keydown', (e) => {
 
     document.addEventListener('keyup', (e) => {
         if (e.code === 'Space') {
-            bull.jumpUpDown();
+            if (playerJump === true) {
+                bull.jumpUpDown();
+            }
+            playerJump = false;
+            setTimeout(() => {
+                playerJump = true;
+            }, 750)
             // console.log("bull positionX -"+bull.positionX + " bull positionY -" + bull.positionY)
-        }     
+        }      
     })
 
     
@@ -73,7 +81,7 @@ setInterval(() => {
             }, 4000)
             setInterval(() =>{
                 game.dropsugarcanes();
-            },100)
+            },50)
 
         }
     })
@@ -88,10 +96,8 @@ setInterval(() => {
     })
 }, 100)
 
-
-
-//obstacle collision detection
-setInterval(() => {
+//obstacle collisio;n detection
+const obstacleTimer=setInterval(() => {
     obstArmy.forEach((obstacle) => {
 
         if (bull.positionX < obstacle.positionX + obstacle.width &&
@@ -100,7 +106,13 @@ setInterval(() => {
             bull.positionY + bull.height > obstacle.positionY) {
             //    console.log(bull.positionX,(obstacle.positionX + obstacle.width),(bull.positionX+ bull.width),obstacle.positionX)
             //    console.log(bull.positionX, obstacle.width, bull.width,obstacle.positionX)
-            location.href = " playAgain.html" 
+            // game.result.innerText="Game over.. Cow got burned!!!"
+            // resultElm.style.background = "url('../img/cowangry.png') no-repeat"
+            // game.resultElm.style.display = "flex";
+            // game.gameArenaElm.remove();
+            // game.statusBarElm.remove(); 
+            // clearInterval(obstacleTimer);
+            // clearInterval(gameTimer);         
         }
         
     })
@@ -112,6 +124,19 @@ setInterval(() => {
 const gameTimer = setInterval(() => {
     game.updateTimer();
     if (game.timer === 30) {
-        location.href = "playAgain.html"
+    //     if(game.score < 5){
+    //     game.result.innerText ="You failed to feed the cow!! Cow is hangry!!"
+    //     resultElm.style.background = "url('../img/cowangry.png') no-repeat"
+    //    } 
+    // else{
+    //     game.result.innerText  ="yay!!! Cow is fulll!!!!"
+    //     resultElm.style.background = "url('../img/cowhappy.png') no-repeat"
+
+    // }
+    // game.resultElm.style.display = "flex";
+    // game.gameArenaElm.remove();
+    // game.statusBarElm.remove();
+    // clearInterval(gameTimer);    
+    // clearInterval(obstacleTimer);
     }
 }, 1000)

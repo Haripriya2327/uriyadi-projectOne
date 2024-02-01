@@ -12,19 +12,36 @@ class Game {
         this.scoreElm = null;
         this.timerElm = null;
         this.hungerLevel = 0;
-        this.statusElm = document.getElementById("statusBar");
-        this.gameElm = document.getElementById("gameArena");
+        // this.statusElm = document.getElementById("statusBar");
+        this.bodyElm = document.getElementById("gamePage");
+        this.resultElm = document.querySelector("#resultDiv")
+        this.result = document.querySelector("#result")
+        this.resultElm.style.display = "none";
+        this.createGameArena();
         this.createTimerElement();
         this.createScoreElement();
+        this.createHomeElement();
+    
     }
-
+createGameArena(){
+    this.gameArenaElm = document.createElement("div");
+    this.gameArenaElm.classList.add("game-arena");
+    this.gameArenaElm.setAttribute("id", "gameArena");
+    
+    this.bodyElm.appendChild(this.gameArenaElm)
+    this.statusBarElm = document.createElement("div");
+    this.statusBarElm.classList.add("status-bar");
+    this.statusBarElm.setAttribute("id", "statusBar");
+    
+    this.bodyElm.appendChild(this.statusBarElm)
+}
     createHomeElement() {
-        this.homeElm = document.createElement("span");
+        this.homeElm = document.createElement("a");
         this.homeElm.classList.add("home", "status-box");
         this.homeElm.setAttribute("id", "home");
-        this.homeElm.innerText = "Timer : " + this.timer;
+        this.homeElm.href="../index.html";
 
-        this.statushomeppendChild(this.homeElm);
+        this.statusBarElm.appendChild(this.homeElm);
     }
     createTimerElement() {
         this.timerElm = document.createElement("span");
@@ -32,7 +49,7 @@ class Game {
         this.timerElm.setAttribute("id", "timer");
         this.timerElm.innerText = "Timer : " + this.timer;
 
-        this.statusElm.appendChild(this.timerElm);
+        this.statusBarElm.appendChild(this.timerElm);
     }
     updateTimer() {
         this.timer++;
@@ -42,13 +59,13 @@ class Game {
         this.scoreDiv = document.createElement("div");
         this.scoreDiv.classList.add("score-div", "status-box");
         this.scoreDiv.setAttribute("id", "scoreDiv");
-        this.statusElm.appendChild(this.scoreDiv);
+        this.statusBarElm.appendChild(this.scoreDiv);
 // this.scoreDiv.innerText = "Pots : " + this.score;
 
         this.scoreElm = document.createElement("div");
         this.scoreElm.classList.add( "hungerBar");
         this.scoreElm.setAttribute("id", "score");
-        this.scoreElm.innerText = "Hunger";
+        this.scoreElm.innerText = "";
         this.scoreElm.style.width = this.hungerLevel+"%"
 
         this.scoreDiv.appendChild(this.scoreElm);
@@ -60,10 +77,10 @@ class Game {
         this.scoreElm.style.width =  this.hungerLevel;
         this.scoreElm.style.width = this.hungerLevel+"%"
         }
-        if(this.score > 2 && this.score <=4){
+        if(this.score >= 5 && this.score <7){
            bull.bullElm.style.background = 'url("../img/cownormal.png") no-repeat';
         }  
-        else if(this.score > 4 ){
+        else if(this.score > 7 ){
             bull.bullElm.style.background = 'url("../img/cowhappy.png") no-repeat';
             }
     }
@@ -79,7 +96,7 @@ class Game {
         this.sugarcaneElm.style.left = this.sugarcanePositionX + "vw";
         this.sugarcaneElm.style.bottom = this.sugarcanePositionY + "vh";
 
-        this.gameElm.appendChild(this.sugarcaneElm);
+        game.gameArenaElm.appendChild(this.sugarcaneElm);
     }
     dropsugarcanes() {
         this.sugarcanePositionY--;
