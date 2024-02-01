@@ -106,13 +106,13 @@ const obstacleTimer=setInterval(() => {
             bull.positionY + bull.height > obstacle.positionY) {
             //    console.log(bull.positionX,(obstacle.positionX + obstacle.width),(bull.positionX+ bull.width),obstacle.positionX)
             //    console.log(bull.positionX, obstacle.width, bull.width,obstacle.positionX)
-            // game.result.innerText="Game over.. Cow got burned!!!"
-            // resultElm.style.background = "url('../img/cowangry.png') no-repeat"
-            // game.resultElm.style.display = "flex";
-            // game.gameArenaElm.remove();
-            // game.statusBarElm.remove(); 
-            // clearInterval(obstacleTimer);
-            // clearInterval(gameTimer);         
+            game.result.innerText="Game over.. Cow got burned!!!"
+            resultElm.style.background = "url('../img/cowangry.png') no-repeat"
+            game.resultElm.style.display = "flex";
+            game.gameArenaElm.remove();
+            game.statusBarElm.remove(); 
+            clearInterval(obstacleTimer);
+            clearInterval(gameTimer);         
         }
         
     })
@@ -124,19 +124,19 @@ const obstacleTimer=setInterval(() => {
 const gameTimer = setInterval(() => {
     game.updateTimer();
     if (game.timer === 30) {
-    //     if(game.score < 5){
-    //     game.result.innerText ="You failed to feed the cow!! Cow is hangry!!"
-    //     resultElm.style.background = "url('../img/cowangry.png') no-repeat"
-    //    } 
-    // else{
-    //     game.result.innerText  ="yay!!! Cow is fulll!!!!"
-    //     resultElm.style.background = "url('../img/cowhappy.png') no-repeat"
+        if(game.score < 5){
+        game.result.innerText ="You failed to feed the cow!! Cow is hangry!!"
+        resultElm.style.background = "url('../img/cowangry.png') no-repeat"
+       } 
+    else{
+        game.result.innerText  ="yay!!! Cow is fulll!!!!"
+        resultElm.style.background = "url('../img/cowhappy.png') no-repeat"
 
-    // }
-    // game.resultElm.style.display = "flex";
-    // game.gameArenaElm.remove();
-    // game.statusBarElm.remove();
-    // clearInterval(gameTimer);    
-    // clearInterval(obstacleTimer);
+    }
+    game.resultElm.style.display = "flex";
+    game.gameArenaElm.remove();
+    game.statusBarElm.remove();
+    clearInterval(gameTimer);    
+    clearInterval(obstacleTimer);
     }
 }, 1000)
