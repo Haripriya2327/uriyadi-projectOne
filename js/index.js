@@ -80,7 +80,7 @@ setInterval(() => {
             game.createsugarcanes(pot.positionX, pot.positionY);
             game.updateScore();           
             setTimeout(() => {
-                pot.potElm.style.background = 'url("../img/potFinal.png") no-repeat' ; 
+                pot.potElm.style.background = 'url("./img/potFinal.png") no-repeat' ; 
             }, 4000)
             setInterval(() =>{
                 game.dropsugarcanes();
@@ -110,7 +110,7 @@ const obstacleTimer=setInterval(() => {
             //    console.log(bull.positionX,(obstacle.positionX + obstacle.width),(bull.positionX+ bull.width),obstacle.positionX)
             //    console.log(bull.positionX, obstacle.width, bull.width,obstacle.positionX)
             game.result.innerText="Game over.. Cow got burned!!!"
-            resultElm.style.background = 'url("../img/cowangry.png") no-repeat';
+            resultElm.style.background = 'url("./img/cowangry.png") no-repeat';
             game.resultElm.style.display = "flex";
             game.gameArenaElm.remove();
             game.statusBarElm.remove(); 
@@ -129,11 +129,11 @@ const gameTimer = setInterval(() => {
     if (game.timer === 30) {
         if(game.score < 5){
         game.result.innerText ="You failed to feed the cow!! Cow is hangry!!"
-        resultElm.style.background = 'url("../img/cowangry.png") no-repeat';
+        resultElm.style.background = 'url("./img/cowangry.png") no-repeat';
        } 
     else{
         game.result.innerText  ="yay!!! Cow is fulll!!!!"
-        resultElm.style.background = 'url("../img/cowhappy.png") no-repeat';
+        resultElm.style.background = 'url("./img/cowhappy.png") no-repeat';
 
     }
     game.resultElm.style.display = "flex";
