@@ -1,7 +1,7 @@
 // create class instances
 const bull = new Bull();
 const potArmy = []; 
-const potPositionXArr = [10, 30, 50,  70];
+const potPositionXArr = [10, 30, 50,  70,90];
 let playerJump = true;
 const resultElm = document.getElementById("cow")
 
@@ -34,6 +34,9 @@ setInterval(() => {
 setInterval(() => {
     potArmy[3].moveUpDown();
 }, 70)
+setInterval(() => {
+    potArmy[4].moveUpDown();
+}, 45)
 
 
 
