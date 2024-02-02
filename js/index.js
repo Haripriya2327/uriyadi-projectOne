@@ -112,6 +112,9 @@ const obstacleTimer=setInterval(() => {
             game.result.innerText="Game over.. Cow got burned!!!"
             resultElm.style.background = 'url("./img/cowangry.png") no-repeat';
             game.resultElm.style.display = "flex";
+            if(game.score >= 5){
+                game.result.innerText="Cow is full!!!! But it got burned!!!" 
+            }
             game.gameArenaElm.remove();
             game.statusBarElm.remove(); 
             clearInterval(obstacleTimer);

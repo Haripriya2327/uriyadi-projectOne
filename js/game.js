@@ -39,7 +39,7 @@ createGameArena(){
         this.homeElm = document.createElement("a");
         this.homeElm.classList.add("home", "status-box");
         this.homeElm.setAttribute("id", "home");
-        this.homeElm.href="../index.html";
+        this.homeElm.href="./index.html";
 
         this.statusBarElm.appendChild(this.homeElm);
     }
