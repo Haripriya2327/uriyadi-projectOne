@@ -78,10 +78,10 @@ createGameArena(){
         this.scoreElm.style.width = this.hungerLevel+"%"
         }
         if(this.score >= 5 && this.score <7){
-           bull.bullElm.style.background = 'url("../img/cownormal.png") no-repeat';
+           bull.bullElm.style.background = 'url("./img/cownormal.png") no-repeat';
         }  
         else if(this.score > 7 ){
-            bull.bullElm.style.background = 'url("../img/cowhappy.png") no-repeat';
+            bull.bullElm.style.background = 'url("./img/cowhappy.png") no-repeat';
             }
     }
     createsugarcanes(sugarcanePositionX, sugarcanePositionY) {
