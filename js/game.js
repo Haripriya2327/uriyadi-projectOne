@@ -65,7 +65,7 @@ createGameArena(){
         this.scoreElm = document.createElement("div");
         this.scoreElm.classList.add( "hungerBar");
         this.scoreElm.setAttribute("id", "score");
-        this.scoreElm.innerText = "";
+        this.scoreElm.innerText = "Hungryyyyyy";
         this.scoreElm.style.width = this.hungerLevel+"%"
 
         this.scoreDiv.appendChild(this.scoreElm);
@@ -79,9 +79,11 @@ createGameArena(){
         }
         if(this.score >= 5 && this.score <7){
            bull.bullElm.style.background = 'url("./img/cownormal.png") no-repeat';
+           this.scoreElm.innerText="Yummy Tummyyyyy"
         }  
         else if(this.score >= 7 ){
             bull.bullElm.style.background = 'url("./img/cowHappy.png") no-repeat';
+            this.scoreElm.innerText="Tummy's gonna blow!!"
             }
     }
     createsugarcanes(sugarcanePositionX, sugarcanePositionY) {
