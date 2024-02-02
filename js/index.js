@@ -126,14 +126,14 @@ const obstacleTimer=setInterval(() => {
 //set timer
 const gameTimer = setInterval(() => {
     game.updateTimer();
-    if (game.timer === 30) {
+    if (game.timer === 45) {
         if(game.score < 5){
         game.result.innerText ="You failed to feed the cow!! Cow is hangry!!"
         resultElm.style.background = 'url("./img/cowangry.png") no-repeat';
        } 
     else{
-        game.result.innerText  ="yay!!! Cow is fulll!!!!"
-        resultElm.style.background = 'url("./img/cowhappy.png") no-repeat';
+        game.result.innerText  ="YAY!!! Cow is fulll!!!!"
+        resultElm.style.background = 'url("./img/cowHappy.png") no-repeat';
 
     }
     game.resultElm.style.display = "flex";

@@ -83,7 +83,7 @@ display: flex;
 
 }
 #cow{
-    /* background: url("../img/cowangry.png") no-repeat; */
+    
     height: 100px;
     width: 100px;position: absolute;
 }
@@ -132,6 +132,7 @@ display: flex;
     left: 15vw;
     margin-top: 4vh ;
     margin-bottom: 4vh ;
+    color: whitesmoke;
 }
 /* @keyframes targetAnimation {
     from {display: none;}
